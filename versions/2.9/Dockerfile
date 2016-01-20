@@ -1,6 +1,7 @@
 # Gradle v2.9
 # docker run --rm pottava/gradle:2.9 gradle -version
-# docker run --rm -v /path/to/app:/app pottava/gradle:2.9 gradle
+# docker run --rm -v /path/to/app:/app pottava/gradle:2.9 gradle build
+# docker run --rm -v /path/to/app:/app pottava/gradle:2.9 sh -c "gradle build && gradle clean"
 
 FROM pottava/java:8
 
@@ -14,6 +15,9 @@ RUN set -ex \
       && unzip -q gradle-${GRADLE_VERSION}-bin.zip \
       && ln -s /usr/lib/gradle-${GRADLE_VERSION}/bin/gradle /usr/bin/ \
       && rm -rf gradle-${GRADLE_VERSION}-bin.zip \
+          gradle-${GRADLE_VERSION}/bin/gradle.bat \
+          gradle-${GRADLE_VERSION}/getting-started.html \
+          gradle-${GRADLE_VERSION}/media \
           /opt/jdk/*src.zip \
       && apk del --purge build-dependencies
 
