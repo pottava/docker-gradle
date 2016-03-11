@@ -1,11 +1,11 @@
-# Gradle v2.9
-# docker run --rm pottava/gradle:2.9 gradle -version
-# docker run --rm -v /path/to/app:/app pottava/gradle:2.9 gradle build
-# docker run --rm -v /path/to/app:/app pottava/gradle:2.9 sh -c "gradle build && gradle clean"
+# Gradle v2.11
+# docker run --rm pottava/gradle:2 gradle -version
+# docker run --rm -v /path/to/app:/app pottava/gradle:2 gradle build
+# docker run --rm -v /path/to/app:/app pottava/gradle:2 sh -c "gradle build && gradle clean"
 
 FROM pottava/java:8
 
-ENV GRADLE_VERSION=2.9
+ENV GRADLE_VERSION=2.11
 
 RUN set -ex \
       && apk --no-cache add --virtual build-dependencies curl unzip \
