@@ -9,7 +9,7 @@ ENV GRADLE_VERSION=2.14.1
 
 RUN set -ex \
       && apk --no-cache add --virtual build-dependencies curl unzip \
-      && apk --no-cache add bash \
+      && apk --no-cache add bash libstdc++ \
       && cd /usr/lib \
       && curl -O --location --silent --show-error https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip \
       && unzip -q gradle-${GRADLE_VERSION}-bin.zip \
