@@ -5,7 +5,7 @@
 
 FROM pottava/java:8
 
-ENV GRADLE_VERSION=2.14
+ENV GRADLE_VERSION=2.14.1
 
 RUN set -ex \
       && apk --no-cache add --virtual build-dependencies curl unzip \
