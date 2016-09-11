@@ -3,7 +3,7 @@
 # docker run --rm -v /path/to/app:/app pottava/gradle:2 gradle build
 # docker run --rm -v /path/to/app:/app pottava/gradle:2 sh -c "gradle build && gradle clean"
 
-FROM pottava/java:8
+FROM pottava/java:8-jdk
 
 ENV GRADLE_VERSION=2.14.1
 
